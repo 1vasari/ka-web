@@ -1,5 +1,0 @@
-{
-    "assets_url": "/assets/",
-    "server_url": "http://192.168.99.100:5000",
-    "ws_server_url": "ws://192.168.99.100:8090/ws/user"
-}
