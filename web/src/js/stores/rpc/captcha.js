@@ -1,18 +1,15 @@
 
-
 var Reflux                  = require('reflux');
 var StatefulMixinStore      = require('js/stores/mixins/stateful');
 
-var CaptchaWindowActions    = require('js/actions/windows/captcha');
-var CaptchaRPCActions       = require('js/actions/rpc/captcha');
+var CaptchaActions    = require('js/actions/windows/captcha');
 var WindowsActions          = require('js/actions/window');
 
 var clone                   = require('js/util').clone;
 
 var CaptchaRPCStore = Reflux.createStore({
     listenables : [
-        CaptchaWindowActions,
-        CaptchaRPCActions
+      CaptchaActions
     ],
 
     mixins : [

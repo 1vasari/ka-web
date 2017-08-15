@@ -1,11 +1,10 @@
 
-
 var React           = require('react');
 
 var AboutTab        = require('js/components/window/about/aboutTab');
 var CreditsTab      = require('js/components/window/about/creditsTab');
 
-var StatsRPCActions = require('js/actions/rpc/stats');
+//var StatsRPCActions = require('js/actions/rpc/stats');
 var WindowActions   = require('js/actions/window');
 
 var Tabber          = require('js/components/tabber');
@@ -32,7 +31,7 @@ var AboutWindow = React.createClass({
                     <AboutTab />
                 </Tab>
 
-                <Tab title="Credits" onSelect={StatsRPCActions.requestStatsRPCGetCredits}>
+                <Tab title="Credits" onSelect={function(){alert('TODO')}}>
                     <CreditsTab />
                 </Tab>
             </Tabs>

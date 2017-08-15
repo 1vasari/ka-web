@@ -3,7 +3,7 @@
 var Reflux                  = require('reflux');
 var util                    = require('js/util');
 
-var ShipyardRPCActions      = require('js/actions/rpc/shipyard');
+//var ShipyardRPCActions      = require('js/actions/rpc/shipyard');
 
 var StatefulMixinsStore     = require('js/stores/mixins/stateful');
 
@@ -11,7 +11,7 @@ var clone                   = util.clone;
 
 var GetBuildableShipyardRPCStore = Reflux.createStore({
     listenables : [
-        ShipyardRPCActions
+//        ShipyardRPCActions
     ],
 
     mixins : [

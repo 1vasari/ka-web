@@ -1,5 +1,4 @@
 
-
 var React                   = require('react');
 var Reflux                  = require('reflux');
 
@@ -12,8 +11,6 @@ var DrainTab                = require('js/components/window/essentiavein/drainTa
 
 var WindowActions           = require('js/actions/window');
 var BuildingWindowActions   = require('js/actions/windows/building');
-
-var EssentiaVeinRPCActions  = require('js/actions/rpc/essentiaVein');
 
 var Tabber                  = require('js/components/tabber');
 var Tabs                    = Tabber.Tabs;
@@ -37,8 +34,8 @@ var EssentiaVein = React.createClass({
     ],
 
     componentWillMount : function() {
-        BuildingWindowActions.buildingWindowClear();
-        EssentiaVeinRPCActions.requestEssentiaVeinRPCView(this.props.options.id);
+        // BuildingWindowActions.buildingWindowClear();
+        // EssentiaVeinRPCActions.requestEssentiaVeinRPCView(this.props.options.id);
     },
 
     closeWindow : function() {

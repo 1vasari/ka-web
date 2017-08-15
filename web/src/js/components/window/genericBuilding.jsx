@@ -1,5 +1,4 @@
 
-
 var React                     = require('react');
 var Reflux                    = require('reflux');
 
@@ -9,8 +8,7 @@ var StandardTabs              = require('js/components/window/building/standardT
 var BuildingInformation       = require('js/components/window/building/information');
 
 var WindowActions             = require('js/actions/window');
-var BuildingWindowActions     = require('js/actions/windows/building');
-var GenericBuildingRPCActions = require('js/actions/rpc/genericBuilding');
+var BuildingActions     = require('js/actions/windows/building');
 
 var Tabber                    = require('js/components/tabber');
 var Tabs                      = Tabber.Tabs;
@@ -33,19 +31,19 @@ var GenericBuilding = React.createClass({
     ],
 
     componentWillMount : function() {
-        BuildingWindowActions.buildingWindowClear();
-        GenericBuildingRPCActions.requestGenericBuildingRPCView(
+        BuildingActions.clear();
+        BuildingActions.view(
             this.props.options.url, this.props.options.id);
     },
 
     componentWillReceiveProps : function() {
-        BuildingWindowActions.buildingWindowClear();
-        GenericBuildingRPCActions.requestGenericBuildingRPCView(this.props.options.url,
+        BuildingActions.clear();
+        BuildingActions.view(this.props.options.url,
             this.props.options.id);
     },
 
     closeWindow : function() {
-        WindowActions.windowCloseByType('building');
+        WindowActions.closeByType('building');
     },
 
     render : function() {

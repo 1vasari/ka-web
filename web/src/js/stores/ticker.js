@@ -9,7 +9,6 @@ var Reflux          = require('reflux');
 var _               = require('lodash');
 
 var TickerActions   = require('js/actions/ticker');
-var EmpireRPCActions = require('js/actions/rpc/empire');
 var UserActions     = require('js/actions/user');
 
 var StatefulStore   = require('js/stores/mixins/stateful');
@@ -21,7 +20,6 @@ var TickerStore = Reflux.createStore({
 
     listenables : [
         TickerActions,
-        EmpireRPCActions,
         UserActions
     ],
 
@@ -58,8 +56,8 @@ var TickerStore = Reflux.createStore({
         }
     },
 
-    onSuccessEmpireRPCLogout : function() {
-        this.onTickerStop();
+    onSignOut : function() {
+        TickerActions.tickerStop();
     },
 
     onTickerStop : function() {

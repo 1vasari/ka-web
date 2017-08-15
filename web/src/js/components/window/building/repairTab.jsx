@@ -3,7 +3,7 @@
 var React                       = require('react');
 var Reflux                      = require('reflux');
 
-var GenericBuildingRPCActions   = require('js/actions/rpc/genericBuilding');
+var BuildingActions   = require('js/actions/windows/building');
 
 var GenericBuildingStore        = require('js/stores/genericBuilding');
 var BodyRPCStore                = require('js/stores/rpc/body');
@@ -18,7 +18,7 @@ var RepairTab = React.createClass({
     ],
 
     handleClick : function() {
-        GenericBuildingRPCActions.requestGenericBuildingRPCRepair(this.state.genericBuildingStore.url, this.state.genericBuildingStore.id);
+        BuildingActions.repair(this.state.genericBuildingStore.url, this.state.genericBuildingStore.id);
     },
 
     render : function() {

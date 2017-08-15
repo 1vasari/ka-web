@@ -1,5 +1,4 @@
 
-
 var React                   = require('react');
 var Reflux                  = require('reflux');
 
@@ -7,7 +6,6 @@ var GenericBuildingStore    = require('js/stores/genericBuilding');
 
 var WindowActions           = require('js/actions/window');
 var BuildingWindowActions   = require('js/actions/windows/building');
-var PoliticsTrainingRPCActions = require('js/actions/rpc/politicsTraining');
 
 var StandardTabs            = require('js/components/window/building/standardTabs');
 var BuildingInformation     = require('js/components/window/building/information');
@@ -36,7 +34,7 @@ var PoliticsTraining = React.createClass({
 
     componentWillMount : function() {
         BuildingWindowActions.buildingWindowClear();
-        PoliticsTrainingRPCActions.requestPoliticsTrainingRPCView(this.props.options.id);
+        //PoliticsTrainingRPCActions.requestPoliticsTrainingRPCView(this.props.options.id);
     },
 
     closeWindow : function() {

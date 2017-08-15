@@ -9,7 +9,6 @@ var util                    = require('js/util');
 var LeftSidebarActions      = require('js/actions/menu/leftSidebar');
 var OptionsWindowActions    = require('js/actions/windows/options');
 var WindowActions           = require('js/actions/window');
-var EmpireRPCActions        = require('js/actions/rpc/empire');
 
 var AboutWindow             = require('js/components/window/about');
 var InviteWindow            = require('js/components/window/invite');
@@ -30,13 +29,15 @@ var SelfDestruct = React.createClass({
         LeftSidebarActions.hide();
 
         if (this.state.empireRPCStore.self_destruct_active === 1) {
-            EmpireRPCActions.requestEmpireRPCDisableSelfDestruct();
+            console.log('TODO');
+            //EmpireRPCActions.requestEmpireRPCDisableSelfDestruct();
             return;
         }
 
         vex.confirm(
             'Are you ABSOLUTELY sure you want to enable self destuct?  If enabled, your empire will be deleted after 24 hours.',
-            EmpireRPCActions.requestEmpireRPCEnableSelfDestruct
+            //EmpireRPCActions.requestEmpireRPCEnableSelfDestruct
+            function(){}
         );
     },
 

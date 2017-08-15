@@ -65,7 +65,7 @@ if (typeof window.YAHOO.lacuna.Game === 'undefined' || !window.YAHOO.lacuna.Game
                     document.getElementById('mainGameContainer')
                 );
 
-                require('js/actions/menu/loader').loaderMenuShow();
+                require('js/actions/menu/loader').show();
 
                 // add overlay manager functionality
                 Game.OverlayManager.hideAllBut = function(id) {
@@ -100,7 +100,7 @@ if (typeof window.YAHOO.lacuna.Game === 'undefined' || !window.YAHOO.lacuna.Game
                 // DOM and then replaced later. For example, switching between tabs that each have
                 // tooltips in them. Calling this every tick ensures that the tooltips are rebuilt if
                 // they disappear.
-                TickerActions.tickerTick.listen(function() {
+                TickerActions.tick.listen(function() {
                     ReactTooltip.rebuild();
                 });
 
@@ -230,8 +230,8 @@ if (typeof window.YAHOO.lacuna.Game === 'undefined' || !window.YAHOO.lacuna.Game
                 );
                 this.InitLogin();
                 Lacuna.Game.LoginDialog.show(error);
-                MenuActions.menuHide();
-                require('js/actions/menu/loader').loaderMenuHide();
+                MenuActions.hide();
+                require('js/actions/menu/loader').hide();
             },
             Run : function() {
                 // set our interval going for resource calcs since Logout clears it
@@ -327,7 +327,7 @@ if (typeof window.YAHOO.lacuna.Game === 'undefined' || !window.YAHOO.lacuna.Game
                                 }
                             };
                             window.YAHOO.log(o, 'error', logNS);
-                            require('js/actions/menu/loader').loaderMenuHide();
+                            require('js/actions/menu/loader').hide();
                             Game.Failure(o, retry, failure);
                         }
                     };

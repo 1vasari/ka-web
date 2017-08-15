@@ -5,12 +5,12 @@ var _                   = require('lodash');
 
 var StatefulMixinStore  = require('js/stores/mixins/stateful');
 
-var StatsRPCActions     = require('js/actions/rpc/stats');
+//var StatsRPCActions     = require('js/actions/rpc/stats');
 
 var CreditsStatsRPCStore = Reflux.createStore({
 
     listenables : [
-        StatsRPCActions
+ //       StatsRPCActions
     ],
 
     mixins : [
@@ -22,7 +22,6 @@ var CreditsStatsRPCStore = Reflux.createStore({
     },
 
     // INPUT:
-    //
     // [
     //     { 'Game Server' : ['JT Smith']},
     //     { 'iPhone Client' : ['Kevin Runde']},
@@ -30,7 +29,7 @@ var CreditsStatsRPCStore = Reflux.createStore({
     //     { 'Play Testers' : ['John Ottinger', 'Jamie Vrbsky']}
     // ]
     //
-    // OUTPUT
+    // OUTPUT:
     // {
     //     'Game Server': ['JT Smith'],
     //     'iPhone Client': ['Kevin Runde'],

@@ -1,12 +1,11 @@
 
-
 var vex                     = require('js/vex');
 
 var React                   = require('react');
 var classnames              = require('classnames');
 var validator               = require('validator');
 
-var EmpireRPCActions        = require('js/actions/rpc/empire');
+//var EmpireRPCActions        = require('js/actions/rpc/empire');
 
 var BoostCountdown          = require('js/components/window/essentia/boostCountdown');
 
@@ -44,7 +43,8 @@ var Boost = React.createClass({
             vex.alert('Insufficient Essentia.');
             return;
         }
-        EmpireRPCActions.requestEmpireRPCBoost({ type : type, weeks : weeks });
+        console.log('TODO')
+        //EmpireRPCActions.requestEmpireRPCBoost({ type : type, weeks : weeks });
     },
 
     renderButton : function() {

@@ -1,5 +1,4 @@
 
-
 var React                 = require('react');
 var Reflux                = require('reflux');
 var _                     = require('lodash');
@@ -9,7 +8,7 @@ var BodyRPCStore          = require('js/stores/rpc/body');
 
 var WindowActions         = require('js/actions/window');
 var BuildingWindowActions = require('js/actions/windows/building');
-var SpacePortRPCActions   = require('js/actions/rpc/spacePort');
+//var SpacePortRPCActions   = require('js/actions/rpc/spacePort');
 
 var StandardTabs          = require('js/components/window/building/standardTabs');
 var BuildingInformation   = require('js/components/window/building/information');
@@ -40,7 +39,7 @@ var SpacePort = React.createClass({
 
     componentWillMount : function() {
         BuildingWindowActions.buildingWindowClear();
-        SpacePortRPCActions.requestSpacePortRPCView(this.props.options.id);
+        //SpacePortRPCActions.requestSpacePortRPCView(this.props.options.id);
     },
 
     closeWindow : function() {
@@ -51,8 +50,8 @@ var SpacePort = React.createClass({
         var building = this.state.genericBuildingStore;
         var tabs = StandardTabs.tabs(this.props.options, building);
         tabs.push(
-            <Tab title="Own Fleets" key="Own Fleets" onSelect={
-                _.partial(SpacePortRPCActions.requestSpacePortRPCViewAllFleets, building.id)
+            <Tab title="Own Fleets" key="Own Fleets" onSelect={function(){}
+                //_.partial(SpacePortRPCActions.requestSpacePortRPCViewAllFleets, building.id)
             }>
                 <SpacePortOwnFleetsTab />
             </Tab>

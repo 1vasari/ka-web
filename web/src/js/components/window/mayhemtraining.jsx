@@ -7,7 +7,6 @@ var GenericBuildingStore    = require('js/stores/genericBuilding');
 
 var WindowActions           = require('js/actions/window');
 var BuildingWindowActions   = require('js/actions/windows/building');
-var MayhemTrainingRPCActions = require('js/actions/rpc/mayhemTraining');
 
 var StandardTabs            = require('js/components/window/building/standardTabs');
 var BuildingInformation     = require('js/components/window/building/information');
@@ -36,7 +35,7 @@ var MayhemTraining = React.createClass({
 
     componentWillMount : function() {
         BuildingWindowActions.buildingWindowClear();
-        MayhemTrainingRPCActions.requestMayhemTrainingRPCView(this.props.options.id);
+        //MayhemTrainingRPCActions.requestMayhemTrainingRPCView(this.props.options.id);
     },
 
     closeWindow : function() {

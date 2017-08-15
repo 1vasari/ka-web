@@ -4,7 +4,7 @@ var React                = require('react');
 var Reflux               = require('reflux');
 
 var WindowActions        = require('js/actions/window');
-var EmpireRPCActions     = require('js/actions/rpc/empire');
+//var EmpireRPCActions     = require('js/actions/rpc/empire');
 
 var SessionStore         = require('js/stores/session');
 var EmpireRPCStore       = require('js/stores/rpc/empire');
@@ -39,7 +39,7 @@ var Essentia = React.createClass({
     render : function() {
         return (
             <Tabs>
-                <Tab title="Boosts" onSelect={EmpireRPCActions.requestEmpireRPCGetBoosts}>
+                <Tab title="Boosts" onSelect={function(){console.log('TODO')}}>
                     <BoostsTab
                         essentia={this.state.empireStore.essentia}
                         exactEssentia={this.state.empireStore.exactEssentia}

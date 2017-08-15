@@ -1,5 +1,4 @@
 
-
 var React                 = require('react');
 var Reflux                = require('reflux');
 var _                     = require('lodash');
@@ -8,7 +7,7 @@ var GenericBuildingStore  = require('js/stores/genericBuilding');
 
 var WindowActions         = require('js/actions/window');
 var BuildingWindowActions = require('js/actions/windows/building');
-var ShipyardRPCActions    = require('js/actions/rpc/shipyard');
+//var ShipyardRPCActions    = require('js/actions/rpc/shipyard');
 
 var StandardTabs          = require('js/components/window/building/standardTabs');
 var BuildingInformation   = require('js/components/window/building/information');
@@ -38,7 +37,7 @@ var Shipyard = React.createClass({
 
     componentWillMount : function() {
         BuildingWindowActions.buildingWindowClear();
-        ShipyardRPCActions.requestShipyardRPCView(this.props.options.id);
+        //ShipyardRPCActions.requestShipyardRPCView(this.props.options.id);
     },
 
     closeWindow : function() {
@@ -58,8 +57,8 @@ var Shipyard = React.createClass({
             <Tab
                 title="Build Ships"
                 key="Build Ships"
-                onSelect={
-                    _.partial(ShipyardRPCActions.requestShipyardRPCGetBuildable, building.id)
+                onSelect={function(){}
+//                    _.partial(ShipyardRPCActions.requestShipyardRPCGetBuildable, building.id)
                 }
             >
                 <BuildFleetTab buildingId={building.id} />

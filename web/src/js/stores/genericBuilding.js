@@ -1,18 +1,15 @@
 
-
 var Reflux                      = require('reflux');
 var StatefulMixinStore          = require('js/stores/mixins/stateful');
 var _                           = require('lodash');
 
 var BuildingWindowActions       = require('js/actions/windows/building');
 var WindowActions               = require('js/actions/window');
-var GenericBuildingRPCActions   = require('js/actions/rpc/genericBuilding');
 
 var GenericBuildingRPCStore = Reflux.createStore({
 
     listenables : [
-        BuildingWindowActions,
-        GenericBuildingRPCActions
+        BuildingWindowActions
     ],
 
     mixins : [

@@ -1,8 +1,7 @@
 
-
 var React            = require('react');
 
-var EmpireRPCActions = require('js/actions/rpc/empire');
+//var EmpireRPCActions = require('js/actions/rpc/empire');
 
 var WindowActions    = require('js/actions/window');
 
@@ -22,11 +21,12 @@ var GetEssentiaTab = React.createClass({
     },
 
     redeem : function() {
-        var node = this.refs.code;
-        EmpireRPCActions.requestEmpireRPCRedeemEssentiaCode({
-            code : node.value
-        });
-        node.value = '';
+      console.log('TODO')
+        // var node = this.refs.code;
+        // EmpireRPCActions.requestEmpireRPCRedeemEssentiaCode({
+        //     code : node.value
+        // });
+        // node.value = '';
     },
 
     invite : function() {

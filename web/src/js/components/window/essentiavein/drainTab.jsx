@@ -3,7 +3,7 @@
 var React                   = require('react');
 var _                       = require('lodash');
 
-var EssentiaVeinRPCActions  = require('js/actions/rpc/essentiaVein');
+//var EssentiaVeinRPCActions  = require('js/actions/rpc/essentiaVein');
 
 var DrainTab = React.createClass({
 
@@ -19,10 +19,10 @@ var DrainTab = React.createClass({
         var times = parseInt($(this.refs.dropdown).dropdown('get value'), 10) / 30;
         var id = this.props.building.id;
 
-        EssentiaVeinRPCActions.requestEssentiaVeinRPCDrain({
-            id    : id,
-            times : times
-        });
+        // EssentiaVeinRPCActions.requestEssentiaVeinRPCDrain({
+        //     id    : id,
+        //     times : times
+        // });
     },
 
     render : function() {

@@ -3,8 +3,8 @@
 var Reflux = require('reflux');
 
 var BodyStatusActions = Reflux.createActions([
-    'bodyStatusUpdate',
-    'bodyStatusClear'
+    'update',
+    'clear'
 ]);
 
 module.exports = BodyStatusActions;

@@ -1,10 +1,8 @@
 
-
 var React                   = require('react');
 var Reflux                  = require('reflux');
 
-var CaptchaWindowActions    = require('js/actions/windows/captcha');
-var CaptchaRPCActions       = require('js/actions/rpc/captcha');
+var CaptchaActions    = require('js/actions/windows/captcha');
 var WindowActions           = require('js/actions/window');
 
 var CaptchaRPCStore         = require('js/stores/rpc/captcha');
@@ -27,11 +25,12 @@ var Captcha = React.createClass({
     ],
 
     componentWillMount : function() {
-        CaptchaRPCActions.requestCaptchaRPCFetch();
+      CaptchaActions.fetch()
     },
 
     componentWillUnmount : function() {
         var success = this.props.options.success;
+
         if (typeof success === 'function') {
             if (this.state.captchaRPCStore.solved) {
                 success();
@@ -47,7 +46,7 @@ var Captcha = React.createClass({
 
     onWindowShow : function() {
         this.clearSolutionField();
-        CaptchaRPCActions.requestCaptchaRPCFetch();
+        CaptchaActions.fetch();
     },
 
     handleEnterKey : function(event) {
@@ -60,7 +59,7 @@ var Captcha = React.createClass({
     onClickSolve : function() {
         var solution = this.refs.solution.value;
 
-        CaptchaRPCActions.requestCaptchaRPCSolve({
+        CaptchaActions.solve({
             guid     : this.state.captchaRPCStore.guid,
             solution : solution
         });
@@ -68,12 +67,12 @@ var Captcha = React.createClass({
 
     onClickRefresh : function() {
         this.clearSolutionField();
-        CaptchaWindowActions.captchaWindowRefresh();
+        CaptchaActions.refresh();
     },
 
     onClickClose : function() {
         this.clearSolutionField();
-        WindowActions.windowCloseByType('captcha');
+        WindowActions.closeByType('captcha');
     },
 
     clearSolutionField : function() {

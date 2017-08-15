@@ -1,5 +1,4 @@
 
-
 var React                   = require('react');
 var Reflux                  = require('reflux');
 
@@ -7,7 +6,6 @@ var GenericBuildingStore    = require('js/stores/genericBuilding');
 
 var WindowActions           = require('js/actions/window');
 var BuildingWindowActions   = require('js/actions/windows/building');
-var IntelTrainingRPCActions = require('js/actions/rpc/intelTraining');
 
 var StandardTabs            = require('js/components/window/building/standardTabs');
 var BuildingInformation     = require('js/components/window/building/information');
@@ -36,7 +34,7 @@ var IntelTraining = React.createClass({
 
     componentWillMount : function() {
         BuildingWindowActions.buildingWindowClear();
-        IntelTrainingRPCActions.requestIntelTrainingRPCView(this.props.options.id);
+        //IntelTrainingRPCActions.requestIntelTrainingRPCView(this.props.options.id);
     },
 
     closeWindow : function() {

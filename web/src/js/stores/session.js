@@ -1,17 +1,14 @@
 
-
 var Reflux              = require('reflux');
 
 var SessionActions      = require('js/actions/session');
-var EmpireRPCActions    = require('js/actions/rpc/empire');
 
 var StatefulStore       = require('js/stores/mixins/stateful');
 
 var SessionStore = Reflux.createStore({
 
     listenables : [
-        SessionActions,
-        EmpireRPCActions
+        SessionActions
     ],
 
     mixins : [
@@ -27,10 +24,6 @@ var SessionStore = Reflux.createStore({
     },
 
     onSessionClear : function() {
-        this.emit(this.getDefaultData());
-    },
-
-    onSuccessEmpireRPCLogout : function() {
         this.emit(this.getDefaultData());
     }
 });

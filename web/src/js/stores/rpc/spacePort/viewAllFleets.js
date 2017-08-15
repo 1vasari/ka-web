@@ -1,9 +1,8 @@
 
-
 var Reflux                  = require('reflux');
 var util                    = require('js/util');
 
-var SpacePortRPCActions     = require('js/actions/rpc/spacePort');
+//var SpacePortRPCActions     = require('js/actions/rpc/spacePort');
 
 var StatefulMixinsStore     = require('js/stores/mixins/stateful');
 
@@ -11,7 +10,7 @@ var clone                   = util.clone;
 
 var ViewAllFleetsSpacePortRPCStore = Reflux.createStore({
     listenables : [
-        SpacePortRPCActions
+ //       SpacePortRPCActions
     ],
 
     mixins : [

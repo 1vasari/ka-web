@@ -3,8 +3,8 @@
 var Reflux = require('reflux');
 
 var ServerStatusActions = Reflux.createActions([
-    'serverStatusUpdate',
-    'serverStatusClear'
+    'update',
+    'clear'
 ]);
 
 module.exports = ServerStatusActions;

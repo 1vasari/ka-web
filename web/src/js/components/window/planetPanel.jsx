@@ -1,12 +1,10 @@
 
-
 var React                   = require('react');
 var Reflux                  = require('reflux');
 
 var GetBodyStatusRPCStore   = require('js/stores/rpc/body/getBodyStatus');
 
 var WindowActions           = require('js/actions/window');
-var BodyRPCActions          = require('js/actions/rpc/body');
 
 var PlanetDetailsTab        = require('js/components/window/planetPanel/planetDetailsTab');
 var Tabber                  = require('js/components/tabber');
@@ -32,9 +30,10 @@ var PlanetPanel = React.createClass({
     ],
 
     componentWillMount : function() {
-        BodyRPCActions.requestBodyRPCGetBodyStatus({
-            bodyId : this.props.options.data.id
-        });
+      console.log('TODO')
+        // BodyRPCActions.requestBodyRPCGetBodyStatus({
+        //     bodyId : this.props.options.data.id
+        // });
     },
 
     closeWindow : function() {

@@ -1,10 +1,9 @@
 
-
 var React                       = require('react');
 var Reflux                      = require('reflux');
 
-var ShipyardRPCActions          = require('js/actions/rpc/shipyard');
-var BuildQueueShipyardRPCStore  = require('js/stores/rpc/shipyard/buildQueue');
+//var ShipyardRPCActions          = require('js/actions/rpc/shipyard');
+//var BuildQueueShipyardRPCStore  = require('js/stores/rpc/shipyard/buildQueue');
 
 var BuildQueueItem              = require('js/components/window/shipyard/buildQueue/item');
 
@@ -15,13 +14,14 @@ var BuildQueueTab = React.createClass({
     },
 
     componentWillMount : function() {
-        ShipyardRPCActions.requestShipyardRPCViewBuildQueue({
-            building_id : this.props.buildingId
-        });
+      console.log('TODO')
+        // ShipyardRPCActions.requestShipyardRPCViewBuildQueue({
+        //     building_id : this.props.buildingId
+        // });
     },
 
     mixins : [
-        Reflux.connect(BuildQueueShipyardRPCStore, 'buildQueueStore')
+        //Reflux.connect(BuildQueueShipyardRPCStore, 'buildQueueStore')
     ],
 
     render : function() {

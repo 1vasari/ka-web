@@ -3,7 +3,7 @@
 var React            = require('react');
 var Reflux           = require('reflux');
 
-var EmpireRPCActions = require('js/actions/rpc/empire');
+//var EmpireRPCActions = require('js/actions/rpc/empire');
 var WindowActions    = require('js/actions/window');
 
 var InviteRPCStore   = require('js/stores/rpc/invite');
@@ -29,14 +29,15 @@ var InviteWindow = React.createClass({
         var email = this.refs.email.value;
         var message = this.refs.message.value;
 
-        EmpireRPCActions.requestEmpireRPCInviteFriend({
-            email   : email,
-            message : message
-        });
+        // EmpireRPCActions.requestEmpireRPCInviteFriend({
+        //     email   : email,
+        //     message : message
+        // });
     },
 
     componentDidMount : function() {
-        EmpireRPCActions.requestEmpireRPCGetInviteFriendUrl();
+      console.log('TODO')
+        //EmpireRPCActions.requestEmpireRPCGetInviteFriendUrl();
     },
 
     componentDidUpdate : function() {

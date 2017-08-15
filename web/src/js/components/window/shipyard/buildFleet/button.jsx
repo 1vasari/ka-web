@@ -1,8 +1,7 @@
 
-
 var React               = require('react');
 
-var ShipyardRPCActions  = require('js/actions/rpc/shipyard');
+//var ShipyardRPCActions  = require('js/actions/rpc/shipyard');
 
 var BuildButton = React.createClass({
 
@@ -17,12 +16,13 @@ var BuildButton = React.createClass({
     handleQuantity : function(o) {
         var quantity = this.refs.quantity.value;
 
-        ShipyardRPCActions.requestShipyardRPCBuildFleet({
-            building_ids : [this.props.buildingId],
-            type         : this.props.fleetType,
-            quantity     : quantity,
-            autoselect   : this.props.autoSelect
-        });
+        console.log('TODO')
+        // ShipyardRPCActions.requestShipyardRPCBuildFleet({
+        //     building_ids : [this.props.buildingId],
+        //     type         : this.props.fleetType,
+        //     quantity     : quantity,
+        //     autoselect   : this.props.autoSelect
+        // });
     },
 
     render : function() {
@@ -34,7 +34,7 @@ var BuildButton = React.createClass({
 
         return (
             <div className="ui fluid action input">
-                <input type="text" placeholder="Qty." ref="quantity" />
+                <input type="text" placeholder="Qty" ref="quantity" />
                 <div className="ui green button" onClick={this.handleQuantity}>
                     Build
                 </div>

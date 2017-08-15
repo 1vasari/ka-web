@@ -3,7 +3,7 @@
 var Reflux                  = require('reflux');
 var util                    = require('js/util');
 
-var BodyRPCActions          = require('js/actions/rpc/body');
+//var BodyRPCActions          = require('js/actions/rpc/body');
 
 var StatefulMixinsStore     = require('js/stores/mixins/stateful');
 
@@ -11,7 +11,7 @@ var clone                   = util.clone;
 
 var GetBodyStatusRPCStore = Reflux.createStore({
     listenables : [
-        BodyRPCActions
+ //       BodyRPCActions
     ],
 
     mixins : [

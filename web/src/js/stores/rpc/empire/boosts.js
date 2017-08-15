@@ -1,11 +1,10 @@
 
-
 var Reflux              = require('reflux');
 var _                   = require('lodash');
 var util                = require('js/util');
 
 var TickerActions       = require('js/actions/ticker');
-var EmpireRPCActions    = require('js/actions/rpc/empire');
+//var EmpireRPCActions    = require('js/actions/rpc/empire');
 
 var StatefulMixinsStore = require('js/stores/mixins/stateful');
 var ServerRPCStore      = require('js/stores/rpc/server');
@@ -25,8 +24,7 @@ var BOOST_TYPES = [
 
 var BoostsEmpireRPCStore = Reflux.createStore({
     listenables : [
-        TickerActions,
-        EmpireRPCActions
+        TickerActions
     ],
 
     mixins : [

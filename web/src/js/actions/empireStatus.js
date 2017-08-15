@@ -3,8 +3,8 @@
 var Reflux = require('reflux');
 
 var EmpireStatusActions = Reflux.createActions([
-    'empireStatusUpdate',
-    'empireStatusClear'
+    'update',
+    'clear'
 ]);
 
 module.exports = EmpireStatusActions;

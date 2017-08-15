@@ -5,7 +5,7 @@ var Reflux                      = require('reflux');
 var _                           = require('lodash');
 
 var BodyRPCStore                = require('js/stores/rpc/body');
-var GenericBuildingRPCActions   = require('js/actions/rpc/genericBuilding');
+var BuildingActions   = require('js/actions/windows/building');
 
 var ActionButton                = require('js/components/window/building/actionButton');
 var ResourceProduction          = require('js/components/window/building/resourceProduction');
@@ -31,7 +31,7 @@ var ProductionTab = React.createClass({
         vex.confirm(
             'Are you sure you want to demolish your ' + name + '?',
             _.bind(function() {
-                GenericBuildingRPCActions.requestGenericBuildingRPCDemolish(
+                BuildingActions.demolish(
                                                                             this.props.building.url,
                                                                             { building_id: this.props.building.id });
             }, this)
@@ -44,14 +44,14 @@ var ProductionTab = React.createClass({
         vex.confirm(
             'Are you sure you want to downgrade your ' + name + '?',
             _.bind(function() {
-                GenericBuildingRPCActions.requestGenericBuildingRPCDowngrade(
+                BuildingActions.downgrade(
                     this.props.building.url, this.props.building.id);
             }, this)
         );
     },
 
     onUpgradeClick : function() {
-        GenericBuildingRPCActions.requestGenericBuildingRPCUpgrade(
+        BuildingActions.upgrade(
             this.props.building.url, this.props.building.id);
     },
 
