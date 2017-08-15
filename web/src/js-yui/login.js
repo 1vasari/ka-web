@@ -7,7 +7,6 @@ var UserActions = require('js/actions/user');
 var Fingerprint2 = require('fingerprintjs2');
 
 var WindowActions   = require('js/actions/window');
-var LoginWindow     = require('js/components/window/login');
 
 var _ = require('lodash');
 
@@ -28,8 +27,6 @@ if (typeof window.YAHOO.lacuna.Login == "undefined" || !window.YAHOO.lacuna.Logi
     var Login = function() {
         this.id = "login";
         this.createEvent("onLoginSuccessful");
-
-        WindowActions.windowAdd(LoginWindow, 'login');
 
         var container = document.createElement("div");
         container.id = this.id;

@@ -1,5 +1,3 @@
-
-
 window.YAHOO.namespace('lacuna');
 
 var React           = require('react');
@@ -225,7 +223,11 @@ if (typeof window.YAHOO.lacuna.Game === 'undefined' || !window.YAHOO.lacuna.Game
                 }
             },
             DoLogin : function(error) {
-                Dom.setStyle(document.body, 'background', 'url(' + Lib.AssetUrl + 'star_system/field.png) repeat scroll 0 0 black');
+                Dom.setStyle(
+                  document.body,
+                  'background',
+                  'url(' + Lib.AssetUrl + 'star_system/field.png) repeat scroll 0 0 black'
+                );
                 this.InitLogin();
                 Lacuna.Game.LoginDialog.show(error);
                 MenuActions.menuHide();

@@ -1,5 +1,4 @@
 
-
 var config = require('js/config');
 
 var constants = {
@@ -17,7 +16,6 @@ var constants = {
             return url + '/';
         }
     })(),
-    WS_BASE : config.get('ws_server_url'),
 
     FLEET_TAGS : {
         trade        : 'Trade',

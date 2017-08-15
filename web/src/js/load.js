@@ -58,7 +58,6 @@
         require('js-yui/smd');
         require('js-yui/rpc');
         require('js/game');
-        require('js/dao');
 
         // Empire management and star map
         require('js-yui/announce');
